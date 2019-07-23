@@ -11,7 +11,16 @@ void setup() {
 
 void loop() {
 
-      analogWrite(pwmPin3,255);
-      analogWrite(pwmPin5,0);
-
+        analogWrite(pwmPin3,0);
+        analogWrite(pwmPin5,255);
+        delay(3000);
+        analogWrite(pwmPin5,200);
+        delay(3000);
+        analogWrite(pwmPin5,150);
+        delay(3000);
+        analogWrite(pwmPin5,135);
+        delay(3000);
+        analogWrite(pwmPin5,0);
+        delay(3000);
+        
 }
