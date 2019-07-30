@@ -12,13 +12,13 @@ void setup() {
 
 void loop() {
 
-      analogWrite(pwmPin6,255);
-      analogWrite(pwmPin9,0);
+      analogWrite(pwmPin9,255);
+      analogWrite(pwmPin6,0);
       digitalWrite(pwmPin11,HIGH);
       analogWrite(pwmPin3,255);
-      delay(2000);
-      analogWrite(pwmPin3,235);
-      delay(5000);
+      delay(3000);
+      analogWrite(pwmPin3,180);
+      delay(3000);
 
       
 }
