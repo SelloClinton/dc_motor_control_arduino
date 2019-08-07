@@ -9,6 +9,7 @@ int revolution = 0;
 int encoder = 0;
 int oldTime = 0;
 int time;
+double capTime = 0;
 double rev = 0;
 double rpm;
 
@@ -29,12 +30,13 @@ void setup() {
 }
 
 void loop() {
-//   delay(1000);
+ //  delay(1000);
 //  detachInterrupt(0);
  // time= millis()-oldTime;
-  rpm = rev/(time*60000);
+  rpm = ((0.05)*(60000))/(capTime*1000.0);
 //  oldTime = millis();
   rev = 0;
+//  time = 0;
  // attachInterrupt(0,ISR,RISING);
   
   
@@ -64,6 +66,7 @@ void loop() {
 
     }
       oldTime = millis();
+      capTime = time/1000.0;
   }
   //update last variable
   lastState = cur_state;
@@ -72,15 +75,16 @@ void loop() {
 //  Serial.print(time);
 //  Serial.print(" --- oldTime: ");
 //  Serial.println(oldTime);
-  Serial.print("counter: ");
-  Serial.print(counter);
+  Serial.print("RPM: ");
+  Serial.println(rpm);
 //  Serial.print(" --- Angle: ");
 //  Serial.println(degrees_);
-    Serial.print(" --- rpm: ");
-    Serial.println(rpm);
-//    Serial.print("rev: ");
-//    Serial.println(rev);
+    Serial.print(" --- captime: ");
+    Serial.println(capTime);
+    Serial.print("counter: ");
+    Serial.println(counter);
     //delay(500);
+    time = 0;
 }
 //
 void isr(){
