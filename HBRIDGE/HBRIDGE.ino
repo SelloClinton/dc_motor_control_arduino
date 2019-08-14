@@ -16,22 +16,27 @@ void setup() {
  pinMode(mos_onLeft,OUTPUT);
  pinMode(toS0,OUTPUT);
  pinMode(sign_bit,INPUT);
- Serial.begin(9600);
+// Serial.begin(9600);
  
 // digitalWrite(mos_swRight,HIGH);
 // digitalWrite(mos_swLeft,HIGH);
- TCCR2B = TCCR2B & B11111000 | B00000001;
+ TCCR2B = TCCR2B & B11111000 | B00000010;
 }
-
+// 084 589 7807
 void loop() {
-  
-  readVoltCommand();
-  drive();
-  Serial.print("volt_command: ");
-  Serial.print(volt_command);
-  Serial.print(" --- sign bit: ");
-  Serial.println(volt_sign);
-  delay(1000);
+   c_cw_rotation();  //left
+//   delay(1500);
+//   c_cw_less();
+//   delay(3000);
+//   stopMotor();
+//   delay(3000);
+ //  cw_rotation();   //right
+//   delay(1500);
+//   cw_less();
+//   delay(3000);
+//   stopMotor();
+//   delay(3000);
+
 }
 
 void readVoltCommand(){
@@ -61,34 +66,29 @@ void readVoltCommand(){
 
 void cw_rotation(){//analog swRight to vary speed in this direction
   
-     digitalWrite(mos_onRight,LOW);
-     digitalWrite(mos_onLeft,HIGH);
+     analogWrite(mos_onRight,0);
+     analogWrite(mos_onLeft,255);
      digitalWrite(mos_swLeft,HIGH);
-     analogWrite(mos_swRight,volt_command);  
+     analogWrite(mos_swRight,180);  
 
  }
 
+
  void c_cw_rotation(){//swLeft varies speed in this direction
+     analogWrite(mos_onRight,255);
+     analogWrite(mos_onLeft,0);
+     digitalWrite(mos_swRight,HIGH);
+     analogWrite(mos_swLeft,255);
+ }
+void c_cw_less(){
      digitalWrite(mos_onRight,HIGH);
      digitalWrite(mos_onLeft,LOW);
      digitalWrite(mos_swRight,HIGH);
-     analogWrite(mos_swLeft,volt_command);
+     analogWrite(mos_swLeft,255);
+  }
+void  cw_less(){
+     digitalWrite(mos_onRight,LOW);
+     digitalWrite(mos_onLeft,HIGH);
+     digitalWrite(mos_swLeft,HIGH);
+     analogWrite(mos_swRight,130);   
  }
-//
-//void speed_cw(){
-//  cw_rotation();
-//  digitalWrite(mos_swLeft,HIGH);
-//  analogWrite(mos_swRight,255);
-//  delay(3000);
-//  analogWrite(mos_swRight,190);
-//  delay(3000);
-//  }
-//
-//  void speed_c_cw(){
-//    c_cw_rotation();
-//  digitalWrite(mos_swRight,HIGH);
-//  analogWrite(mos_swLeft,255);
-//  delay(3000);
-//  analogWrite(mos_swLeft,200);
-//  delay(3000);
-//  }

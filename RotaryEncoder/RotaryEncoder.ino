@@ -1,6 +1,9 @@
 #define clk A0
 #define dt  A1
-
+#define mos_swLeft 3
+#define mos_swRight 11
+#define mos_onRight 6
+#define mos_onLeft 9
 //initialize counter
 int counter = 0;
 int degrees_ = 0;
@@ -19,8 +22,13 @@ double rpm;
 void setup() {
   // put your setup code here, to run once:
   //configure clk and dt as digital inputs
+ pinMode(mos_swLeft,OUTPUT);
+ pinMode(mos_swRight,OUTPUT);
+ pinMode(mos_onRight,OUTPUT);
+ pinMode(mos_onLeft,OUTPUT);
  pinMode(clk, INPUT);
  pinMode(dt, INPUT);
+ TCCR2B = TCCR2B & B11111000 | B00000010;
  //setup serial monitor
  Serial.begin(9600);
  //read in the last state
@@ -30,6 +38,7 @@ void setup() {
 }
 
 void loop() {
+ cw_rotation();
  //  delay(1000);
 //  detachInterrupt(0);
  // time= millis()-oldTime;
@@ -93,6 +102,15 @@ void isr(){
     Serial.println(rev);
     
 }
+
+void cw_rotation(){//analog swRight to vary speed in this direction
+  
+     analogWrite(mos_onRight,0);
+     analogWrite(mos_onLeft,255);
+     digitalWrite(mos_swLeft,HIGH);
+     analogWrite(mos_swRight,200);  
+
+ }
 
 
 
