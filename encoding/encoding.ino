@@ -1,32 +1,33 @@
 #define s1 3
-volatile int revolution = 0;
+volatile double revolution = 0;
+int lastState;
 volatile int counter = 0;
-volatile int timing = 0;
+int time;
+int oldTime = 0;
+double capTime = 0;
+double prevRev = 0;
+int degrees_ = 0;
+double rpm;
 void setup(){
     pinMode(s1,INPUT);
     pinMode(10,OUTPUT);
     pinMode(A0,INPUT);
     pinMode(A1,INPUT);
-    Serial.begin(9600); 
-    attachInterrupt(digitalPinToInterrupt(s1), printS, CHANGE);
+    Serial.begin(9600);
+    prevRev = revolution; 
+    attachInterrupt(digitalPinToInterrupt(s1), printS, RISING);
+    
  }
 //
 void loop(){
-    millis();
-}
-//
-void printS(){
-  if(digitalRead(s1) == 0){
-      counter++; 
-   }
-    revolution = counter / 80;
-    
-   if(counter == 80){
-        revolution++;
-        counter = 0;
-        Serial.print(revolution);
-        Serial.println(" REVOLUTIONS");
-    }
 
-   
+    Serial.print("revolutions: ");
+    Serial.println(revolution);
+    prevRev = revolution;
+
+}
+void printS(){
+  
+  counter++;
+  revolution = counter/3.0;
 }
