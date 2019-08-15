@@ -1,33 +1,30 @@
 #define s1 3
-volatile double revolution = 0;
-int lastState;
-volatile int counter = 0;
-int time;
-int oldTime = 0;
-double capTime = 0;
-double prevRev = 0;
-int degrees_ = 0;
-double rpm;
-void setup(){
-    pinMode(s1,INPUT);
-    pinMode(10,OUTPUT);
-    pinMode(A0,INPUT);
-    pinMode(A1,INPUT);
-    Serial.begin(9600);
-    prevRev = revolution; 
-    attachInterrupt(digitalPinToInterrupt(s1), printS, RISING);
-    
+ volatile byte half_revolutions;
+ unsigned int rpm;
+ unsigned long timeold;
+ void setup()
+ {
+   Serial.begin(9600);
+   attachInterrupt(digitalPinToInterrupt(s1), rpm_fun, RISING);
+   half_revolutions = 0;
+   rpm = 0;
+   timeold = 0;
  }
-//
-void loop(){
-
-    Serial.print("revolutions: ");
-    Serial.println(revolution);
-    prevRev = revolution;
-
-}
-void printS(){
-  
-  counter++;
-  revolution = counter/3.0;
-}
+ void loop()
+ {
+   if (half_revolutions >= 80) { 
+     //Update RPM every 20 counts, increase this for better RPM resolution,
+     //decrease for faster update
+     rpm = (30*1000/(millis() - timeold)*half_revolutions)/(40);
+     timeold = millis();
+     half_revolutions = 0;
+     Serial.println(rpm,DEC);
+     
+   }
+   
+ }
+ void rpm_fun()
+ {
+   half_revolutions++;
+   //Each rotation, this interrupt function is run twice
+ }
