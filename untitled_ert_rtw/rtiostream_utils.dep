@@ -1,0 +1,11 @@
+rtiostream_utils.o: \
+ C:/PROGRA~1/MATLAB/R2019a/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c \
+ C:/PROGRA~1/MATLAB/R2019a/toolbox/coder/rtiostream/src/utils/rtiostream_utils.h \
+ C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h \
+ C:/PROGRA~1/MATLAB/R2019a/toolbox/coder/rtiostream/src/rtiostream.h
+
+C:/PROGRA~1/MATLAB/R2019a/toolbox/coder/rtiostream/src/utils/rtiostream_utils.h:
+
+C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h:
+
+C:/PROGRA~1/MATLAB/R2019a/toolbox/coder/rtiostream/src/rtiostream.h:
