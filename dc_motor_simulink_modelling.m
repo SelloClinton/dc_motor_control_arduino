@@ -4,3 +4,4 @@ K = 1;
 R = 1;
 L = 1;
 counter = 0;
+voltage = -5.0;
