@@ -9,10 +9,7 @@ revolution = int32(0);
 rev_distance = int32(5);
 
 %obtained
-K_e = 0.0046;
-K_t = 0.387;
+K_e = 
+K_t = 0.387
 R_a = 0.556;
 L_a = 2.672e-09;
-
-
-
