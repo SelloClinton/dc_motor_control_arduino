@@ -15,8 +15,12 @@ K_t = 0.36;
 R_a = 3.4997;
 L_a = 0.00010;
 
-K_g = 3.0;
+K_g = 1.67;
 pinion_radius = 0.175;
+mass = 2.50;
+g = 9.89;
+fr_coeff = 0.05;
+F_fr = fr_coeff*(mass*g);
 
 
-PWM = [124:2:200];
+
