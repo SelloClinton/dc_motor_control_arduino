@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.1 (R2019a) 23-Nov-2018
- * C/C++ source code generated on : Sat Aug 17 01:11:25 2019
+ * C/C++ source code generated on : Fri Aug 23 23:39:26 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -28,6 +28,7 @@ typedef struct {
   boolean_T matlabCodegenIsDeleted;
   int32_T isInitialized;
   boolean_T isSetupComplete;
+  real_T SampleTime;
   real_T Protocol;
 } codertarget_arduinobase_block_T;
 

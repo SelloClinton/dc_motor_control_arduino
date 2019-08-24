@@ -28,28 +28,16 @@
     ;%
     ;% Auto data (untitled_P)
     ;%
-      section.nData     = 5;
-      section.data(5)  = dumData; %prealloc
+      section.nData     = 2;
+      section.data(2)  = dumData; %prealloc
       
-	  ;% untitled_P.DigitalOutput_Protocol
+	  ;% untitled_P.DigitalInput_SampleTime
 	  section.data(1).logicalSrcIdx = 0;
 	  section.data(1).dtTransOffset = 0;
 	
-	  ;% untitled_P.PulseGenerator_Amp
+	  ;% untitled_P.DigitalInput_Protocol
 	  section.data(2).logicalSrcIdx = 1;
 	  section.data(2).dtTransOffset = 1;
-	
-	  ;% untitled_P.PulseGenerator_Period
-	  section.data(3).logicalSrcIdx = 2;
-	  section.data(3).dtTransOffset = 2;
-	
-	  ;% untitled_P.PulseGenerator_Duty
-	  section.data(4).logicalSrcIdx = 3;
-	  section.data(4).dtTransOffset = 3;
-	
-	  ;% untitled_P.PulseGenerator_PhaseDelay
-	  section.data(5).logicalSrcIdx = 4;
-	  section.data(5).dtTransOffset = 4;
 	
       nTotData = nTotData + section.nData;
       paramMap.sections(1) = section;
@@ -73,7 +61,7 @@
   ;%**************************
       
     nTotData      = 0; %add to this count as we go
-    nTotSects     = 0;
+    nTotSects     = 1;
     sectIdxOffset = 0;
     
     ;%
@@ -90,11 +78,23 @@
     ;%
     sigMap.nSections           = nTotSects;
     sigMap.sectIdxOffset       = sectIdxOffset;
+      sigMap.sections(nTotSects) = dumSection; %prealloc
     sigMap.nTotData            = -1;
     
     ;%
     ;% Auto data (untitled_B)
     ;%
+      section.nData     = 1;
+      section.data(1)  = dumData; %prealloc
+      
+	  ;% untitled_B.DigitalInput
+	  section.data(1).logicalSrcIdx = 0;
+	  section.data(1).dtTransOffset = 0;
+	
+      nTotData = nTotData + section.nData;
+      sigMap.sections(1) = section;
+      clear section
+      
     
       ;%
       ;% Non-auto Data (signal)
@@ -113,8 +113,8 @@
   ;%*******************
       
     nTotData      = 0; %add to this count as we go
-    nTotSects     = 3;
-    sectIdxOffset = 0;
+    nTotSects     = 2;
+    sectIdxOffset = 1;
     
     ;%
     ;% Define dummy sections & preallocate arrays
@@ -150,23 +150,12 @@
       section.nData     = 1;
       section.data(1)  = dumData; %prealloc
       
-	  ;% untitled_DW.clockTickCounter
+	  ;% untitled_DW.Scope_PWORK.LoggedData
 	  section.data(1).logicalSrcIdx = 1;
 	  section.data(1).dtTransOffset = 0;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(2) = section;
-      clear section
-      
-      section.nData     = 1;
-      section.data(1)  = dumData; %prealloc
-      
-	  ;% untitled_DW.FunctionCallSubsystem_SubsysRan
-	  section.data(1).logicalSrcIdx = 2;
-	  section.data(1).dtTransOffset = 0;
-	
-      nTotData = nTotData + section.nData;
-      dworkMap.sections(3) = section;
       clear section
       
     
@@ -195,8 +184,8 @@
   ;%
 
 
-  targMap.checksum0 = 1778878098;
-  targMap.checksum1 = 4165629009;
-  targMap.checksum2 = 4076947886;
-  targMap.checksum3 = 3576767642;
+  targMap.checksum0 = 667418574;
+  targMap.checksum1 = 69652169;
+  targMap.checksum2 = 2937512211;
+  targMap.checksum3 = 2481937756;
 
