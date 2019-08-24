@@ -11,6 +11,13 @@
 
 // Motor encoder output pulse per rotation (change as required)
 #define ENC_COUNT_REV 400
+#define mag A0
+#define sign_bit 6
+#define compare 7
+#define org A1
+#define inv A2
+double voltage = 0.0;
+#define dt 3
 
 // Encoder output to Arduino Interrupt pin
 #define ENC_IN 2 
@@ -28,7 +35,7 @@ volatile long encoderValue = 0;
 
 // One-second interval for measurements
 int interval = 100;
-
+         
 // Counters for milliseconds during interval
 long previousMillis = 0;
 long currentMillis = 0;
@@ -38,7 +45,10 @@ int rpm = 0;
 
 // Variable for PWM motor speed output
 int motorPwm = 0;
-float rpm_array[10];
+volatile double direct = 0.0; 
+volatile int lastState;
+int time = 0;
+
 
 void setup()
 {
@@ -51,61 +61,64 @@ void setup()
   // Set PWM and DIR connections as outputs
   pinMode(PWM, OUTPUT);
   pinMode(DIR, OUTPUT);
+  pinMode(mag,INPUT);
+  pinMode(sign_bit,OUTPUT);
+  pinMode(dt,INPUT_PULLUP);
+  pinMode(compare,INPUT);
+
   
   // Attach interrupt 
   attachInterrupt(digitalPinToInterrupt(ENC_IN), updateEncoder, RISING);
   
   // Setup initial values for timer
   previousMillis = millis();
+  lastState = digitalRead(dt);
+  
 }
 
 void loop()
 {
   
-    // Control motor with potentiometer
-    motorPwm = map(analogRead(speedcontrol), 0, 1023, 0, 255);
-    
-    // Write PWM to controller
-    analogWrite(PWM, motorPwm);
-  
-  // Update RPM value every second
+    digitalWrite(sign_bit,analogRead(mag));
+//
+    if(analogRead(mag) > 0){
+      voltage = 2.0*(analogRead(org)/400.0);
+    }
+  else if(analogRead(mag) == 0){
+      voltage = -2.0*((analogRead(org)/400.0));
+    }
+
   currentMillis = millis();
-    float ave = 0.0;
-  float sum = 0.0;
- // for(int i = 0; i != 10; i++){
+
   if (currentMillis - previousMillis > interval) {
     previousMillis = currentMillis;
 
 
-    // Calculate RPM
-    rpm = (float)(encoderValue * 60 / ENC_COUNT_REV);
- //   rpm_array[i] = rpm;
-//    sum+=rpm_array[j];
-    // Only update display when there is a reading
-    if (motorPwm > 0 || rpm > 0) {
-      Serial.print("PWM VALUE: ");
-      Serial.print(motorPwm);
-      Serial.print('\t');
-      Serial.print(" PULSES: ");
-      Serial.print(encoderValue);
-      Serial.print('\t');
-      Serial.print(" SPEED: ");
-      Serial.print(rpm);
-      Serial.println(" RPM");
-    }
-    
+//     Calculate RPM
+//   if(voltage >= 0.0){
+        rpm = (float)(encoderValue * 60 / ENC_COUNT_REV);
+//    }
+//    else if(voltage < 0.0){
+//        rpm = (float)(-1.0*encoderValue * 60 / ENC_COUNT_REV);
+//      } 
+//  }  
+////
+   
     encoderValue = 0;
-  }
-//  }
 
-//    ave = sum/10.0;
-//    Serial.print("ave_RPM : ");
-//    Serial.println(ave);
+//    Serial.print("V: ");
+//    Serial.print(voltage);
+//    Serial.print('\t');
+    Serial.print(" RPM: ");
+    Serial.println(rpm);
+    
+
 
 }
+}
 
-void updateEncoder()
-{
-  // Increment value for each pulse from encoder
+void updateEncoder(){
+
   encoderValue++;
+
 }

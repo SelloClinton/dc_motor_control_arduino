@@ -1,8 +1,8 @@
 ext_svr_daemon.o: \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/toolbox/target/shared/externalmode_daemon/src/ext_svr_daemon.c \
- C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h \
- C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/multiword_types.h \
- C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h \
+ C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h \
+ C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/multiword_types.h \
+ C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_extmode.h \
  C:/PROGRA~1/MATLAB/R2019a/rtw/c/src/ext_mode/common/ext_types.h \
  C:/PROGRA~1/MATLAB/R2019a/rtw/c/src/ext_mode/common/ext_share.h \
@@ -14,11 +14,11 @@ ext_svr_daemon.o: \
  C:/PROGRA~1/MATLAB/R2019a/rtw/c/src/dt_info.h \
  C:/PROGRA~3/MATLAB/SUPPOR~1/R2019a/toolbox/target/shared/EXTERN~1/include/daemon_checksum.h
 
-C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h:
+C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h:
 
-C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/multiword_types.h:
+C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/multiword_types.h:
 
-C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h:
+C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h:
 
 C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_extmode.h:
 

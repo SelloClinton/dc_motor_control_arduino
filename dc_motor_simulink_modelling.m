@@ -7,3 +7,8 @@ counter = int32(0);
 voltage = int32(0);
 revolution = int32(0);
 rev_distance = int32(5);
+
+
+
+
+

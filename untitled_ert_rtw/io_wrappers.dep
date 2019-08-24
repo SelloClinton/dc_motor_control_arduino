@@ -11,7 +11,7 @@ io_wrappers.o: \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/USBAPI.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h \
- C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h
+ C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h
 
 C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
 
@@ -35,4 +35,4 @@ C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/ard
 
 C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h:
 
-C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h:
+C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h:

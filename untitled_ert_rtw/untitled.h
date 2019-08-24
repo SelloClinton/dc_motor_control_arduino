@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.1 (R2019a) 23-Nov-2018
- * C/C++ source code generated on : Sat Aug 17 01:11:25 2019
+ * C/C++ source code generated on : Fri Aug 23 15:47:56 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -31,7 +31,6 @@
 #include "rtw_solver.h"
 #include "dt_info.h"
 #include "ext_work.h"
-#include "MW_arduinoextint.h"
 #include "MW_arduino_digitalio.h"
 #endif                                 /* untitled_COMMON_INCLUDES_ */
 
@@ -40,6 +39,8 @@
 /* Shared type includes */
 #include "multiword_types.h"
 #include "MW_target_hardware_resources.h"
+#include "rtGetInf.h"
+#include "rt_nonfinite.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetFinalTime
@@ -82,29 +83,26 @@
 # define rtmGetTPtr(rtm)               (&(rtm)->Timing.taskTime0)
 #endif
 
+/* Block signals (default storage) */
+typedef struct {
+  boolean_T DigitalInput;              /* '<S1>/Digital Input' */
+} B_untitled_T;
+
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  codertarget_arduinobase_block_T obj; /* '<S2>/Digital Output' */
-  int32_T clockTickCounter;            /* '<S1>/Pulse Generator' */
-  int8_T FunctionCallSubsystem_SubsysRan;/* '<Root>/Function-Call Subsystem' */
+  codertarget_arduinobase_block_T obj; /* '<S1>/Digital Input' */
+  struct {
+    void *LoggedData;
+  } Scope_PWORK;                       /* '<Root>/Scope' */
 } DW_untitled_T;
 
 /* Parameters (default storage) */
 struct P_untitled_T_ {
-  real_T DigitalOutput_Protocol;       /* Expression: 0
-                                        * Referenced by: '<S2>/Digital Output'
+  real_T DigitalInput_SampleTime;      /* Expression: 0.001
+                                        * Referenced by: '<S1>/Digital Input'
                                         */
-  real_T PulseGenerator_Amp;           /* Expression: 1
-                                        * Referenced by: '<S1>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_Period;        /* Expression: 10
-                                        * Referenced by: '<S1>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_Duty;          /* Expression: 5
-                                        * Referenced by: '<S1>/Pulse Generator'
-                                        */
-  real_T PulseGenerator_PhaseDelay;    /* Expression: 0
-                                        * Referenced by: '<S1>/Pulse Generator'
+  real_T DigitalInput_Protocol;        /* Expression: 0
+                                        * Referenced by: '<S1>/Digital Input'
                                         */
 };
 
@@ -141,11 +139,6 @@ struct tag_RTM_untitled_T {
     time_T taskTime0;
     uint32_T clockTick0;
     time_T stepSize0;
-    uint32_T clockTick1;
-    uint8_T rtmDbBufReadBuf1;
-    uint8_T rtmDbBufWriteBuf1;
-    boolean_T rtmDbBufLastBufWr1;
-    uint32_T rtmDbBufClockTick1[2];
     time_T tFinal;
     boolean_T stopRequestedFlag;
   } Timing;
@@ -153,6 +146,9 @@ struct tag_RTM_untitled_T {
 
 /* Block parameters (default storage) */
 extern P_untitled_T untitled_P;
+
+/* Block signals (default storage) */
+extern B_untitled_T untitled_B;
 
 /* Block states (default storage) */
 extern DW_untitled_T untitled_DW;
@@ -180,8 +176,7 @@ extern RT_MODEL_untitled_T *const untitled_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'untitled'
- * '<S1>'   : 'untitled/Function-Call Subsystem'
- * '<S2>'   : 'untitled/Function-Call Subsystem/Digital Output'
+ * '<S1>'   : 'untitled/Digital Input'
  */
 #endif                                 /* RTW_HEADER_untitled_h_ */
 

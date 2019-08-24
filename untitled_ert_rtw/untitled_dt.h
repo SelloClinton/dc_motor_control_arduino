@@ -9,7 +9,7 @@
  *
  * Model version              : 1.0
  * Simulink Coder version : 9.1 (R2019a) 23-Nov-2018
- * C source code generated on : Sat Aug 17 01:11:25 2019
+ * C source code generated on : Fri Aug 23 15:47:56 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -59,11 +59,12 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
+  { (char_T *)(&untitled_B.DigitalInput), 8, 0, 1 }
+  ,
+
   { (char_T *)(&untitled_DW.obj), 14, 0, 1 },
 
-  { (char_T *)(&untitled_DW.clockTickCounter), 6, 0, 1 },
-
-  { (char_T *)(&untitled_DW.FunctionCallSubsystem_SubsysRan), 2, 0, 1 }
+  { (char_T *)(&untitled_DW.Scope_PWORK.LoggedData), 11, 0, 1 }
 };
 
 /* data type transition table for block I/O structure */
@@ -74,7 +75,7 @@ static DataTypeTransitionTable rtBTransTable = {
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&untitled_P.DigitalOutput_Protocol), 0, 0, 5 }
+  { (char_T *)(&untitled_P.DigitalInput_SampleTime), 0, 0, 2 }
 };
 
 /* data type transition table for Parameters structure */

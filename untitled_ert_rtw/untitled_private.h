@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.1 (R2019a) 23-Nov-2018
- * C/C++ source code generated on : Sat Aug 17 01:11:25 2019
+ * C/C++ source code generated on : Fri Aug 23 15:47:56 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -26,9 +26,6 @@
 #ifndef rtmSetTFinal
 # define rtmSetTFinal(rtm, val)        ((rtm)->Timing.tFinal = (val))
 #endif
-
-void MW_ISR_2(void);
-
 #endif                                 /* RTW_HEADER_untitled_private_h_ */
 
 /*

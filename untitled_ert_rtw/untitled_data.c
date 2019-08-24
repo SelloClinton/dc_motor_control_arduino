@@ -9,7 +9,7 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.1 (R2019a) 23-Nov-2018
- * C/C++ source code generated on : Sat Aug 17 01:11:25 2019
+ * C/C++ source code generated on : Fri Aug 23 15:47:56 2019
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -22,28 +22,13 @@
 
 /* Block parameters (default storage) */
 P_untitled_T untitled_P = {
-  /* Expression: 0
-   * Referenced by: '<S2>/Digital Output'
+  /* Expression: 0.001
+   * Referenced by: '<S1>/Digital Input'
    */
-  0.0,
-
-  /* Expression: 1
-   * Referenced by: '<S1>/Pulse Generator'
-   */
-  1.0,
-
-  /* Expression: 10
-   * Referenced by: '<S1>/Pulse Generator'
-   */
-  10.0,
-
-  /* Expression: 5
-   * Referenced by: '<S1>/Pulse Generator'
-   */
-  5.0,
+  0.001,
 
   /* Expression: 0
-   * Referenced by: '<S1>/Pulse Generator'
+   * Referenced by: '<S1>/Digital Input'
    */
   0.0
 };
