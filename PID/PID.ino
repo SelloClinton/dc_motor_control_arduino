@@ -25,7 +25,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-
   output = computePID(encoderValue);
   delay(100);
   analogWrite(PID_OUT,output);
