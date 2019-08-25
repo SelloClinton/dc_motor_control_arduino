@@ -9,7 +9,11 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.1 (R2019a) 23-Nov-2018
+<<<<<<< HEAD
  * C/C++ source code generated on : Fri Aug 23 15:47:56 2019
+=======
+ * C/C++ source code generated on : Fri Aug 23 23:39:26 2019
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -52,19 +56,31 @@ void untitled_step(void)
     untitled_DW.obj.Protocol = untitled_P.DigitalInput_Protocol;
   }
 
+<<<<<<< HEAD
   untitled_B.DigitalInput = readDigitalPin(2);
+=======
+  untitled_B.DigitalInput = readDigitalPin(8);
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
 
   /* End of MATLABSystem: '<S1>/Digital Input' */
 
   /* External mode */
   rtExtModeUploadCheckTrigger(1);
 
+<<<<<<< HEAD
   {                                    /* Sample time: [0.001s, 0.0s] */
+=======
+  {                                    /* Sample time: [0.1s, 0.0s] */
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
     rtExtModeUpload(0, (real_T)untitled_M->Timing.taskTime0);
   }
 
   /* signal main to stop simulation */
+<<<<<<< HEAD
   {                                    /* Sample time: [0.001s, 0.0s] */
+=======
+  {                                    /* Sample time: [0.1s, 0.0s] */
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
     if ((rtmGetTFinal(untitled_M)!=-1) &&
         !((rtmGetTFinal(untitled_M)-untitled_M->Timing.taskTime0) >
           untitled_M->Timing.taskTime0 * (DBL_EPSILON))) {
@@ -98,6 +114,7 @@ void untitled_initialize(void)
   (void) memset((void *)untitled_M, 0,
                 sizeof(RT_MODEL_untitled_T));
   rtmSetTFinal(untitled_M, -1);
+<<<<<<< HEAD
   untitled_M->Timing.stepSize0 = 0.001;
 
   /* External mode info */
@@ -105,6 +122,15 @@ void untitled_initialize(void)
   untitled_M->Sizes.checksums[1] = (1566994674U);
   untitled_M->Sizes.checksums[2] = (35952765U);
   untitled_M->Sizes.checksums[3] = (397500069U);
+=======
+  untitled_M->Timing.stepSize0 = 0.1;
+
+  /* External mode info */
+  untitled_M->Sizes.checksums[0] = (667418574U);
+  untitled_M->Sizes.checksums[1] = (69652169U);
+  untitled_M->Sizes.checksums[2] = (2937512211U);
+  untitled_M->Sizes.checksums[3] = (2481937756U);
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
@@ -153,7 +179,11 @@ void untitled_initialize(void)
   untitled_DW.obj.Protocol = untitled_P.DigitalInput_Protocol;
   untitled_DW.obj.isSetupComplete = false;
   untitled_DW.obj.isInitialized = 1L;
+<<<<<<< HEAD
   digitalIOSetup(2, false);
+=======
+  digitalIOSetup(8, false);
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
   untitled_DW.obj.isSetupComplete = true;
 }
 
