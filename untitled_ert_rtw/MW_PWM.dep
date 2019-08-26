@@ -1,5 +1,8 @@
-io_wrappers.o: \
- C:/ProgramData/MATLAB/SupportPackages/R2019a/toolbox/target/supportpackages/arduinobase/src/io_wrappers.cpp \
+MW_PWM.o: \
+ C:/ProgramData/MATLAB/SupportPackages/R2019a/toolbox/target/supportpackages/arduinobase/src/MW_PWM.cpp \
+ C:/PROGRA~3/MATLAB/SUPPOR~1/R2019a/toolbox/target/shared/svd/include/MW_PWM.h \
+ C:/PROGRA~3/MATLAB/SUPPOR~1/R2019a/toolbox/target/shared/svd/include/MW_SVD.h \
+ C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/binary.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/WCharacter.h \
@@ -10,8 +13,13 @@ io_wrappers.o: \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Printable.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/USBAPI.h \
  C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h \
- C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h \
- C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h
+ C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h
+
+C:/PROGRA~3/MATLAB/SUPPOR~1/R2019a/toolbox/target/shared/svd/include/MW_PWM.h:
+
+C:/PROGRA~3/MATLAB/SUPPOR~1/R2019a/toolbox/target/shared/svd/include/MW_SVD.h:
+
+C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
 
@@ -34,5 +42,3 @@ C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/ard
 C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/cores/arduino/Arduino.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2019a/3P.instrset/arduinoide.instrset/arduino-1.8.1/hardware/arduino/avr/variants/standard/pins_arduino.h:
-
-C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h:

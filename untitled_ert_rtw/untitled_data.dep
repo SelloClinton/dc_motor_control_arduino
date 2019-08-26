@@ -2,7 +2,7 @@ untitled_data.o: untitled_data.c untitled.h rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_extmode.h \
  C:/PROGRA~1/MATLAB/R2019a/simulink/include/sysran_types.h \
  C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_continuous.h \
- C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h \
+ C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_solver.h \
  C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_continuous.h \
  C:/PROGRA~1/MATLAB/R2019a/rtw/c/src/dt_info.h \
@@ -26,7 +26,7 @@ C:/PROGRA~1/MATLAB/R2019a/simulink/include/sysran_types.h:
 
 C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_continuous.h:
 
-C:/Users/fotoyis/Desktop/dc_motor_control_arduino/untitled_ert_rtw/rtwtypes.h:
+C:/Users/NewUser/Desktop/rep/Simulations/untitled_ert_rtw/rtwtypes.h:
 
 C:/PROGRA~1/MATLAB/R2019a/simulink/include/rtw_solver.h:
 

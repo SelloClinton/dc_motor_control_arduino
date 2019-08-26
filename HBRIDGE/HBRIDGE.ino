@@ -24,13 +24,13 @@ void setup() {
 }
 // 084 589 7807
 void loop() {
-   c_cw_rotation();  //left
+//   c_cw_rotation();  //left
 //   delay(1500);
 //   c_cw_less();
 //   delay(3000);
 //   stopMotor();
 //   delay(3000);
- //  cw_rotation();   //right
+   cw_rotation();   //right
 //   delay(1500);
 //   cw_less();
 //   delay(3000);
@@ -69,7 +69,7 @@ void cw_rotation(){//analog swRight to vary speed in this direction
      analogWrite(mos_onRight,0);
      analogWrite(mos_onLeft,255);
      digitalWrite(mos_swLeft,HIGH);
-     analogWrite(mos_swRight,180);  
+     analogWrite(mos_swRight,255);  
 
  }
 

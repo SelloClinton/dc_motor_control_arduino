@@ -184,8 +184,15 @@
   ;%
 
 
+<<<<<<< HEAD
+  targMap.checksum0 = 961826623;
+  targMap.checksum1 = 1566994674;
+  targMap.checksum2 = 35952765;
+  targMap.checksum3 = 397500069;
+=======
   targMap.checksum0 = 667418574;
   targMap.checksum1 = 69652169;
   targMap.checksum2 = 2937512211;
   targMap.checksum3 = 2481937756;
+>>>>>>> 6906ceb8d7f075b065c49c225d695a7e53900e02
 
